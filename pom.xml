@@ -9,6 +9,18 @@
   <artifactId>db-tools</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+  <repositories>
+    <repository>
+      <id>mapr-releases</id>
+      <url>http://repository.mapr.com/maven/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
+  </repositories>
 
   <build>
     <plugins>

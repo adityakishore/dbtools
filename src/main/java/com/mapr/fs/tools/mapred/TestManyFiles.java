@@ -248,14 +248,14 @@ public class TestManyFiles extends Configured implements Tool {
 
       try {
         for (int i = 0; i < file_count; i++) {
-          pool.submit(new CreateFileTask(fs, new Path(parent, String.valueOf(i)), file_size)).get();
+          pool.submit(new CreateFileTask(fs, new Path(parent, String.valueOf(i)), file_size));
           reporter.progress();
           reporter.incrCounter("TestManyFiles", "FileCount", 1);
           reporter.incrCounter("TestManyFiles", "DataSize", file_size);
         }
         pool.shutdown();
         pool.awaitTermination(Long.MAX_VALUE, TimeUnit.SECONDS);
-      } catch (InterruptedException | ExecutionException e) {
+      } catch (InterruptedException e) {
         e.printStackTrace();
       }
 
